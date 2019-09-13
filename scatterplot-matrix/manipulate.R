@@ -4,7 +4,7 @@ setwd("~/Desktop/DataVis/scatterplot-matrix")
 
 abNYC <- read.csv("new-york-city-airbnb-open-data/AB_NYC_2019.csv")
 abNYC <- abNYC %>%
-  select(neighbourhood, price, availability_365, reviews_per_month, minimum_nights) %>%
+  select(neighbourhood, neighbourhood_group, price, availability_365, reviews_per_month, minimum_nights) %>%
   group_by(neighbourhood) %>%
   mutate(avg_price = sum(price)/n(),
          avg_avail_365 = sum(availability_365)/n(),
